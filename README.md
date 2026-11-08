@@ -33,6 +33,15 @@ docker compose up -d mongo
 npm run build
 ```
 
+### MongoDB version note
+
+The Compose file defaults to `mongo:4.4` because MongoDB 5+ requires a CPU with AVX support. On an AVX-capable host, use MongoDB 7 explicitly:
+
+```powershell
+$env:MONGO_IMAGE = "mongo:7"
+docker compose up -d mongo
+```
+
 The pipeline, API, and dashboard commands are added in later phases.
 
 ## Repository layout
