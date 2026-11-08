@@ -2,8 +2,8 @@ import { SCALES, SEED, type ScaleName } from '@yottaflex/shared';
 import { config } from '../config.js';
 import { connectDb, disconnectDb, dropDb } from '../db.js';
 import { makeGeneratorConfig } from '../services/generator/config.js';
-import { buildMasterDataset } from '../services/generator/master.js';
-import { persistMasterDataset } from '../services/generator/persist.js';
+import { buildDataset } from '../services/generator/dataset.js';
+import { persistDataset } from '../services/generator/persist.js';
 import { numberFlag, parseArgs, stringFlag, type ParsedArgs } from './args.js';
 
 function getScale(args: ParsedArgs): ScaleName {
@@ -25,13 +25,13 @@ async function runPipeline(args: ParsedArgs): Promise<void> {
   console.log(
     `[pipeline] scale=${scale} seed=${seed} db=${dbName} asOf=${generatorConfig.asOf}`,
   );
-  console.log('[pipeline] phase 2: generating master data');
+  console.log('[pipeline] phases 2-3: generating master and transactional data');
 
   await connectDb(mongoUri, dbName);
   await dropDb();
 
-  const dataset = buildMasterDataset(generatorConfig, seed);
-  const counts = await persistMasterDataset(dataset);
+  const dataset = buildDataset(generatorConfig, seed);
+  const counts = await persistDataset(dataset);
 
   console.log('[pipeline] persisted collections:', counts);
   console.log(`[pipeline] completed in ${((Date.now() - startedAt) / 1000).toFixed(2)}s`);
@@ -44,7 +44,7 @@ Usage:
   npm run pipeline -- --scale starter|full --seed 20261022 --db yottaflex
 
 Commands:
-  pipeline   Generate and persist master data (phase 2)
+  pipeline   Generate and persist full dataset (phases 2-3)
   help       Show this help
 `);
 }

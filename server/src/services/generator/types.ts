@@ -44,3 +44,5 @@ export interface Dataset extends MasterDataset {
   availabilities: Availability[];
   lifecycleEvents: LifecycleEvent[];
 }
+
+export type DatasetWithoutEvents = Omit<Dataset, 'lifecycleEvents'>;

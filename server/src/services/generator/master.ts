@@ -94,11 +94,29 @@ const SPECIALIZATIONS: Record<Department, readonly string[]> = {
   Economics: ['Macroeconomics', 'Microeconomics', 'Development Economics', 'Econometrics'],
 };
 
-const STUDENT_STATUS_WEIGHTS = [
-  { value: 'Active' as const, weight: 88 },
-  { value: 'Graduated' as const, weight: 7 },
-  { value: 'Withdrawn' as const, weight: 5 },
-];
+const STUDENT_STATUS_WEIGHTS: Record<
+  number,
+  Array<{ value: 'Active' | 'Graduated' | 'Withdrawn'; weight: number }>
+> = {
+  2023: [
+    { value: 'Active', weight: 60 },
+    { value: 'Graduated', weight: 30 },
+    { value: 'Withdrawn', weight: 10 },
+  ],
+  2024: [
+    { value: 'Active', weight: 80 },
+    { value: 'Graduated', weight: 15 },
+    { value: 'Withdrawn', weight: 5 },
+  ],
+  2025: [
+    { value: 'Active', weight: 90 },
+    { value: 'Withdrawn', weight: 10 },
+  ],
+  2026: [
+    { value: 'Active', weight: 95 },
+    { value: 'Withdrawn', weight: 5 },
+  ],
+};
 
 const COHORT_WEIGHTS = [
   { value: 2023, weight: 15 },
@@ -327,7 +345,7 @@ export function buildStudents(
       program_id: program._id,
       cohort_year: cohortYear,
       entry_term: entryTerm,
-      status: rng.weighted(STUDENT_STATUS_WEIGHTS),
+      status: rng.weighted(STUDENT_STATUS_WEIGHTS[cohortYear] ?? STUDENT_STATUS_WEIGHTS[2025]!),
       created_at: config.asOf,
     });
   }
@@ -417,7 +435,7 @@ export function buildFacultySkills(
       continue;
     }
     const pool = facultyByDepartment.get(program.department) ?? [];
-    if (pool.length === 0 || rng.bool(0.05)) {
+    if (pool.length === 0 || rng.bool(0.1)) {
       continue;
     }
     const count = Math.min(pool.length, rng.weighted(SKILL_COUNT_WEIGHTS));

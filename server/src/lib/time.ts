@@ -41,6 +41,14 @@ export function daysBetween(start: string, end: string): number {
   return Math.round((parseDate(end).getTime() - parseDate(start).getTime()) / DAY_MS);
 }
 
+export function minDate(left: string, right: string): string {
+  return left <= right ? left : right;
+}
+
+export function maxDate(left: string, right: string): string {
+  return left >= right ? left : right;
+}
+
 export function timeToMinutes(value: string): number {
   const [hours, minutes] = value.split(':').map(Number);
   return (hours ?? 0) * 60 + (minutes ?? 0);
