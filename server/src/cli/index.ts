@@ -1,6 +1,21 @@
-import { SCALES, SEED, type ScaleName } from '@yottaflex/shared';
+import {
+  AS_OF,
+  HISTORY_TERMS,
+  SCALES,
+  SEED,
+  TARGET_TERM,
+  type Course,
+  type RegistrationInterest,
+  type ScaleName,
+} from '@yottaflex/shared';
 import { config } from '../config.js';
 import { connectDb, disconnectDb, dropDb } from '../db.js';
+import { CourseModel, RegistrationInterestModel } from '../models/index.js';
+import {
+  buildForecasts,
+  computeForecastMetrics,
+  persistForecasts,
+} from '../services/forecast.js';
 import { makeGeneratorConfig } from '../services/generator/config.js';
 import { buildDataset } from '../services/generator/dataset.js';
 import { persistDataset } from '../services/generator/persist.js';
@@ -37,6 +52,60 @@ async function runPipeline(args: ParsedArgs): Promise<void> {
   console.log(`[pipeline] completed in ${((Date.now() - startedAt) / 1000).toFixed(2)}s`);
 }
 
+async function runForecast(args: ParsedArgs): Promise<void> {
+  const scale = getScale(args);
+  const seed = numberFlag(args, 'seed', SEED);
+  const dbName = stringFlag(args, 'db', config.mongoDb);
+  const mongoUri = stringFlag(args, 'mongo-uri', config.mongoUri);
+  const startedAt = Date.now();
+
+  console.log(
+    `[forecast] scale=${scale} seed=${seed} db=${dbName} term=${TARGET_TERM} asOf=${AS_OF}`,
+  );
+  console.log(`[forecast] history terms: ${HISTORY_TERMS.join(', ')}`);
+
+  await connectDb(mongoUri, dbName);
+
+  const courses = await CourseModel.find({})
+    .sort({ _id: 1 })
+    .lean<Course[]>()
+    .exec();
+  const interests = await RegistrationInterestModel.find({
+    term: { $in: [...HISTORY_TERMS, TARGET_TERM] },
+  })
+    .sort({ _id: 1 })
+    .lean<RegistrationInterest[]>()
+    .exec();
+
+  const forecasts = buildForecasts(courses, interests, AS_OF);
+  const count = await persistForecasts(forecasts);
+  const metrics = computeForecastMetrics(forecasts, interests, AS_OF);
+
+  console.log(`[forecast] persisted ${count} forecast rows`);
+  console.log('[forecast] metrics:', {
+    term: metrics.term,
+    method: metrics.method,
+    course_count: metrics.course_count,
+    mae: metrics.mae,
+    rmse: metrics.rmse,
+    mape: metrics.mape,
+    bias: metrics.bias,
+    naive_mae: metrics.naive_mae,
+    improvement_vs_naive: metrics.improvement_vs_naive,
+  });
+  console.log(
+    '[forecast] top demand:',
+    [...forecasts]
+      .sort((left, right) => right.forecast_enrollment - left.forecast_enrollment)
+      .slice(0, 5)
+      .map((forecast) => ({
+        course_id: forecast.course_id,
+        forecast: forecast.forecast_enrollment,
+      })),
+  );
+  console.log(`[forecast] completed in ${((Date.now() - startedAt) / 1000).toFixed(2)}s`);
+}
+
 function printHelp(): void {
   console.log(`YottaFlex pipeline CLI
 
@@ -45,6 +114,7 @@ Usage:
 
 Commands:
   pipeline   Generate and persist full dataset (phases 2-3)
+  forecast   Compute and persist 2026-Fall demand forecasts
   help       Show this help
 `);
 }
@@ -55,6 +125,9 @@ async function main(): Promise<void> {
   switch (args.command) {
     case 'pipeline':
       await runPipeline(args);
+      break;
+    case 'forecast':
+      await runForecast(args);
       break;
     case 'help':
     case '--help':
