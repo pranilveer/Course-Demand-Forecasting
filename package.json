@@ -1,0 +1,39 @@
+{
+  "name": "yottaflex-course-allocation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "build:shared": "npm run build -w @yottaflex/shared",
+    "build:server": "npm run build -w @yottaflex/server",
+    "build:client": "npm run build -w @yottaflex/client",
+    "build": "npm run build:shared && npm run build:server && npm run build:client",
+    "typecheck": "npm run build:shared && tsc -p server/tsconfig.json --noEmit && tsc -p client/tsconfig.json --noEmit",
+    "dev": "npm run build:shared && concurrently -n server,client \"npm run dev -w @yottaflex/server\" \"npm run dev -w @yottaflex/client\"",
+    "pipeline": "npm run build:shared && tsx server/src/cli/index.ts pipeline",
+    "forecast": "npm run build:shared && tsx server/src/cli/index.ts forecast",
+    "allocate": "npm run build:shared && tsx server/src/cli/index.ts allocate",
+    "inject": "npm run build:shared && tsx server/src/cli/index.ts inject",
+    "validate": "npm run build:shared && tsx server/src/cli/index.ts validate",
+    "export": "npm run build:shared && tsx server/src/cli/index.ts export",
+    "report": "npm run build:shared && tsx server/src/cli/index.ts report",
+    "reproduce": "npm run build:shared && tsx server/src/cli/index.ts reproduce",
+    "docs:schema": "npm run build:shared && tsx server/src/cli/index.ts docs",
+    "test": "npm run build:shared && vitest run",
+    "test:integration": "npm run build:shared && vitest run server/tests/integration",
+    "db:up": "docker compose up -d mongo",
+    "db:down": "docker compose down"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
