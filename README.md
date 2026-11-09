@@ -42,7 +42,15 @@ $env:MONGO_IMAGE = "mongo:7"
 docker compose up -d mongo
 ```
 
-The pipeline, API, and dashboard commands are added in later phases.
+Run the data pipeline and allocation phases:
+
+```powershell
+npm run pipeline -- --scale starter
+npm run forecast
+npm run allocate
+```
+
+The API and dashboard commands are added in later phases.
 
 ## Repository layout
 

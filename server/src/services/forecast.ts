@@ -70,7 +70,9 @@ export function buildForecasts(
     demandByTerm.set(term, countDemand(interests, term));
   }
 
-  const sortedCourses = [...courses].sort((left, right) => left._id.localeCompare(right._id));
+  const sortedCourses = courses
+    .filter((course) => course.status === 'Active')
+    .sort((left, right) => left._id.localeCompare(right._id));
 
   return sortedCourses.map((course, index) => {
     const histDemand1 = demandByTerm.get(historyTerm1)?.get(course._id) ?? 0;

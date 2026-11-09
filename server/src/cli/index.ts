@@ -4,13 +4,33 @@ import {
   SCALES,
   SEED,
   TARGET_TERM,
+  type Availability,
   type Course,
+  type DemandForecast,
+  type Faculty,
+  type FacultySkill,
+  type Program,
   type RegistrationInterest,
+  type Room,
   type ScaleName,
 } from '@yottaflex/shared';
 import { config } from '../config.js';
 import { connectDb, disconnectDb, dropDb } from '../db.js';
-import { CourseModel, RegistrationInterestModel } from '../models/index.js';
+import {
+  AvailabilityModel,
+  CourseModel,
+  DemandForecastModel,
+  FacultyModel,
+  FacultySkillModel,
+  ProgramModel,
+  RegistrationInterestModel,
+  RoomModel,
+} from '../models/index.js';
+import {
+  buildAllocation,
+  persistAllocation,
+  prepareAllocation,
+} from '../services/allocate.js';
 import {
   buildForecasts,
   computeForecastMetrics,
@@ -106,6 +126,60 @@ async function runForecast(args: ParsedArgs): Promise<void> {
   console.log(`[forecast] completed in ${((Date.now() - startedAt) / 1000).toFixed(2)}s`);
 }
 
+async function runAllocate(args: ParsedArgs): Promise<void> {
+  const dbName = stringFlag(args, 'db', config.mongoDb);
+  const mongoUri = stringFlag(args, 'mongo-uri', config.mongoUri);
+  const startedAt = Date.now();
+
+  console.log(`[allocate] db=${dbName} term=${TARGET_TERM} asOf=${AS_OF}`);
+
+  await connectDb(mongoUri, dbName);
+
+  const [courses, forecasts, faculty, facultySkills, availabilities, rooms, programs] =
+    await Promise.all([
+      CourseModel.find({}).sort({ _id: 1 }).lean<Course[]>().exec(),
+      DemandForecastModel.find({ term: TARGET_TERM })
+        .sort({ _id: 1 })
+        .lean<DemandForecast[]>()
+        .exec(),
+      FacultyModel.find({}).sort({ _id: 1 }).lean<Faculty[]>().exec(),
+      FacultySkillModel.find({}).sort({ _id: 1 }).lean<FacultySkill[]>().exec(),
+      AvailabilityModel.find({ term: TARGET_TERM })
+        .sort({ _id: 1 })
+        .lean<Availability[]>()
+        .exec(),
+      RoomModel.find({}).sort({ _id: 1 }).lean<Room[]>().exec(),
+      ProgramModel.find({}).sort({ _id: 1 }).lean<Program[]>().exec(),
+    ]);
+
+  const lifecycleEventStart = await prepareAllocation();
+  const result = buildAllocation(
+    {
+      courses,
+      forecasts,
+      faculty,
+      facultySkills,
+      availabilities,
+      rooms,
+      programs,
+      asOf: AS_OF,
+    },
+    lifecycleEventStart,
+  );
+  const counts = await persistAllocation(result);
+
+  console.log('[allocate] persisted collections:', counts);
+  console.log('[allocate] unmet demand:', result.unmetDemands.length);
+  console.log(
+    '[allocate] unmet by reason:',
+    result.unmetDemands.reduce<Record<string, number>>((acc, unmet) => {
+      acc[unmet.reason_code] = (acc[unmet.reason_code] ?? 0) + 1;
+      return acc;
+    }, {}),
+  );
+  console.log(`[allocate] completed in ${((Date.now() - startedAt) / 1000).toFixed(2)}s`);
+}
+
 function printHelp(): void {
   console.log(`YottaFlex pipeline CLI
 
@@ -115,6 +189,7 @@ Usage:
 Commands:
   pipeline   Generate and persist full dataset (phases 2-3)
   forecast   Compute and persist 2026-Fall demand forecasts
+  allocate   Build sections, workloads, decisions, and unmet demand
   help       Show this help
 `);
 }
@@ -128,6 +203,9 @@ async function main(): Promise<void> {
       break;
     case 'forecast':
       await runForecast(args);
+      break;
+    case 'allocate':
+      await runAllocate(args);
       break;
     case 'help':
     case '--help':
