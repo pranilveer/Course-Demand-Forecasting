@@ -1,0 +1,11 @@
+_id,program_code,program_name,department,degree_level,duration_terms,total_credits_required,status,effective_start_date,effective_end_date,created_at
+PRG-000001,CS-BSC-001,Bachelor of Data Science,Computer Science,Bachelor,8,120,Active,2020-08-01,,2026-08-01T00:00:00.000Z
+PRG-000002,EE-BSC-002,Bachelor of Embedded Systems,Electrical Engineering,Bachelor,8,120,Active,2020-08-01,,2026-08-01T00:00:00.000Z
+PRG-000003,ME-BSC-003,Bachelor of Robotics,Mechanical Engineering,Bachelor,8,120,Active,2020-08-01,,2026-08-01T00:00:00.000Z
+PRG-000004,BUS-BSC-004,Bachelor of Finance,Business,Bachelor,8,120,Active,2020-08-01,,2026-08-01T00:00:00.000Z
+PRG-000005,MATH-BSC-005,Bachelor of Applied Mathematics,Mathematics,Bachelor,8,120,Active,2020-08-01,,2026-08-01T00:00:00.000Z
+PRG-000006,PHYS-DIP-006,Diploma in Quantum Physics,Physics,Diploma,4,60,Active,2020-08-01,,2026-08-01T00:00:00.000Z
+PRG-000007,BIO-BSC-007,Bachelor of Ecology,Biology,Bachelor,8,120,Inactive,2020-08-01,2026-06-30,2026-08-01T00:00:00.000Z
+PRG-000008,PSY-BSC-008,Bachelor of Clinical Psychology,Psychology,Bachelor,8,120,Active,2020-08-01,,2026-08-01T00:00:00.000Z
+PRG-000009,DSGN-BSC-009,Bachelor of Interaction Design,Design,Bachelor,8,120,Active,2020-08-01,,2026-08-01T00:00:00.000Z
+PRG-000010,ECON-BSC-010,Bachelor of Econometrics,Economics,Bachelor,8,120,Active,2020-08-01,,2026-08-01T00:00:00.000Z

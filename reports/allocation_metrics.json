@@ -1,0 +1,22 @@
+{
+  "term": "2026-Fall",
+  "course_count": 90,
+  "forecast_total": 1961,
+  "allocated_capacity": 20,
+  "demand_met_pct": 1.02,
+  "unmet_total": 462,
+  "unmet_by_reason": {
+    "NO_QUALIFIED_FACULTY": 335,
+    "WORKLOAD_LIMIT": 127
+  },
+  "section_count": 89,
+  "avg_fill_rate": 50.59,
+  "faculty_count": 46,
+  "avg_workload_utilization": 66.97,
+  "skill_match_pct": 98.9,
+  "room_count": 15,
+  "room_utilization_pct": 29.67,
+  "decision_count": 108,
+  "explainability_pct": 100,
+  "generated_at": "2026-08-01T00:00:00.000Z"
+}

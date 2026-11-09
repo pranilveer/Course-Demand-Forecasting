@@ -1,0 +1,6 @@
+_id,issue_type,entity_type,entity_id,related_entity_id,expected_rule,expected_action,severity,injected,notes,created_at
+ANM-000001,FACULTY_OUTSIDE_SKILL,WorkloadAssignment,WLA-2026-000088,SEC-2026-000001,VAL-SKILL-01,Reassign to a qualified faculty member,High,true,Added co-instructor FAC-000009 without a valid skill for CRS-000052.,2026-08-01T00:00:00.000Z
+ANM-000002,WORKLOAD_EXCEEDED,WorkloadAssignment,WLA-2026-000089,SEC-2026-000011,VAL-WORKLOAD-01,Reassign units or raise the approved workload limit,High,true,"Added 3 units to FAC-000027, exceeding max 9.",2026-08-01T00:00:00.000Z
+ANM-000003,SECTION_CAPACITY_TOO_LOW,Section,SEC-2026-000088,CRS-000024,VAL-CAP-01,Increase capacity or merge with another section,High,true,Added section SEC-2026-000088 with capacity 7 below minimum 8.,2026-08-01T00:00:00.000Z
+ANM-000004,COURSE_SCHEDULED_BEFORE_PREREQUISITE,StudentPlan,STP-002001,STP-000054,VAL-PREREQ-01,Move the course to a term after its prerequisite,High,true,Planned CRS-000045 in 2025-Fall before prerequisite CRS-000043 in 2026-Spring.,2026-08-01T00:00:00.000Z
+ANM-000005,DUPLICATE_SECTION_ASSIGNMENT,Section,SEC-2026-000089,SEC-2026-000012,VAL-DUP-01,Remove or renumber the duplicate section,Medium,true,Added section SEC-2026-000089 duplicating CRS-000024:2026-Fall:1.,2026-08-01T00:00:00.000Z

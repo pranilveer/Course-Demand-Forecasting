@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YottaFlex Data Quality Report</title>
+<style>
+:root { color-scheme: light; --ink: #17212b; --muted: #5d6b7a; --line: #d9e1e8; --accent: #0f766e; --bg: #f6f8fa; --panel: #ffffff; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.5; }
+main { max-width: 1180px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { margin: 0 0 4px; font-size: 32px; }
+h2 { margin: 36px 0 12px; font-size: 22px; }
+p.meta { margin: 0; color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 18px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.card span { display: block; color: var(--muted); font-size: 13px; }
+.card strong { display: block; margin-top: 4px; font-size: 24px; }
+.pass { color: #047857; }
+.fail { color: #b91c1c; }
+table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font-size: 14px; }
+th, td { text-align: left; padding: 9px 11px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #eef3f6; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 18px; }
+.note { background: #ecfdf5; border-left: 4px solid var(--accent); padding: 12px 14px; margin: 12px 0; }
+code { background: #eef3f6; padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<main>
+<h1>YottaFlex Data Quality Report</h1>
+<p class="meta">Scale: starter · Seed: 20261022 · As of: 2026-08-01T00:00:00.000Z · Target term: 2026-Fall</p>
+<div class="cards"><div class="card"><span>Validation gate</span><strong>PASS</strong></div><div class="card"><span>Checks passed</span><strong>16/16</strong></div><div class="card"><span>Expected violations</span><strong>5</strong></div><div class="card"><span>Unexpected violations</span><strong>0</strong></div><div class="card"><span>Anomaly detection</span><strong>100%</strong></div><div class="card"><span>Forecast MAE</span><strong>4.29</strong></div></div>
+<div class="note"><strong>Validation run VAL-000001</strong> finished with <strong class="pass">PASS</strong>. 5 of 5 expected anomalies were detected.</div>
+
+<h2>Forecast quality</h2>
+<div class="cards"><div class="card"><span>Method</span><strong>WMA(0.5,0.3,0.2)+Trend(0.1)</strong></div><div class="card"><span>Courses</span><strong>90</strong></div><div class="card"><span>MAE</span><strong>4.29</strong></div><div class="card"><span>RMSE</span><strong>5.74</strong></div><div class="card"><span>MAPE</span><strong>20.26%</strong></div><div class="card"><span>Improvement vs naive</span><strong>6.54%</strong></div></div>
+<table><thead><tr><th>Course</th><th>Forecast</th><th>Actual</th><th>Naive</th><th>Error</th></tr></thead><tbody><tr><td>CRS-000001</td><td>17</td><td>19</td><td>16</td><td>-2</td></tr>
+<tr><td>CRS-000002</td><td>21</td><td>17</td><td>22</td><td>4</td></tr>
+<tr><td>CRS-000003</td><td>84</td><td>78</td><td>87</td><td>6</td></tr>
+<tr><td>CRS-000004</td><td>19</td><td>20</td><td>21</td><td>-1</td></tr>
+<tr><td>CRS-000005</td><td>44</td><td>61</td><td>43</td><td>-17</td></tr>
+<tr><td>CRS-000007</td><td>18</td><td>23</td><td>21</td><td>-5</td></tr>
+<tr><td>CRS-000008</td><td>16</td><td>23</td><td>16</td><td>-7</td></tr>
+<tr><td>CRS-000009</td><td>19</td><td>17</td><td>20</td><td>2</td></tr>
+<tr><td>CRS-000010</td><td>42</td><td>42</td><td>43</td><td>0</td></tr>
+<tr><td>CRS-000011</td><td>42</td><td>45</td><td>43</td><td>-3</td></tr>
+<tr><td>CRS-000012</td><td>18</td><td>20</td><td>19</td><td>-2</td></tr>
+<tr><td>CRS-000013</td><td>19</td><td>24</td><td>20</td><td>-5</td></tr></tbody></table>
+
+<h2>Allocation quality</h2>
+<div class="cards"><div class="card"><span>Demand met</span><strong>1.02%</strong></div><div class="card"><span>Sections</span><strong>89</strong></div><div class="card"><span>Unmet demand</span><strong>462</strong></div><div class="card"><span>Avg fill rate</span><strong>50.59%</strong></div><div class="card"><span>Skill match</span><strong>98.9%</strong></div><div class="card"><span>Explainability</span><strong>100%</strong></div></div>
+<div class="grid">
+<div><table><thead><tr><th>Reason</th><th>Unmet students</th></tr></thead><tbody><tr><td>NO_QUALIFIED_FACULTY</td><td>335</td></tr>
+<tr><td>WORKLOAD_LIMIT</td><td>127</td></tr></tbody></table></div>
+<div><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Forecast total</td><td>1961</td></tr>
+<tr><td>Allocated capacity</td><td>20</td></tr>
+<tr><td>Faculty assigned</td><td>46</td></tr>
+<tr><td>Avg workload utilization</td><td>66.97%</td></tr>
+<tr><td>Rooms available</td><td>15</td></tr>
+<tr><td>Room utilization</td><td>29.67%</td></tr>
+<tr><td>Decisions</td><td>108</td></tr></tbody></table></div>
+</div>
+
+<h2>Validation checks</h2>
+<table><thead><tr><th>Check</th><th>Name</th><th>Status</th><th>Violations</th></tr></thead><tbody><tr><td>VAL-PK-01</td><td>Primary-key uniqueness</td><td>PASS</td><td>0</td></tr>
+<tr><td>VAL-FK-01</td><td>Foreign-key integrity</td><td>PASS</td><td>0</td></tr>
+<tr><td>VAL-ENUM-01</td><td>Allowed enums</td><td>PASS</td><td>0</td></tr>
+<tr><td>VAL-DATE-01</td><td>Date ordering and effective windows</td><td>PASS</td><td>0</td></tr>
+<tr><td>VAL-ARITH-01</td><td>Arithmetic reconciliation</td><td>PASS</td><td>0</td></tr>
+<tr><td>VAL-LIFE-01</td><td>Lifecycle transitions and final state</td><td>PASS</td><td>0</td></tr>
+<tr><td>VAL-DUP-01</td><td>Business-key duplicates</td><td>PASS</td><td>1</td></tr>
+<tr><td>VAL-CAP-01</td><td>Section capacity and minimum size</td><td>PASS</td><td>1</td></tr>
+<tr><td>VAL-SKILL-01</td><td>Faculty skill eligibility</td><td>PASS</td><td>1</td></tr>
+<tr><td>VAL-WORKLOAD-01</td><td>Faculty workload limits</td><td>PASS</td><td>1</td></tr>
+<tr><td>VAL-AVAIL-01</td><td>Faculty availability and leave</td><td>PASS</td><td>0</td></tr>
+<tr><td>VAL-PREREQ-01</td><td>Prerequisite ordering</td><td>PASS</td><td>1</td></tr>
+<tr><td>VAL-ROOM-01</td><td>Room compatibility and schedule conflicts</td><td>PASS</td><td>0</td></tr>
+<tr><td>VAL-FORECAST-01</td><td>Forecast formula and historical provenance</td><td>PASS</td><td>0</td></tr>
+<tr><td>VAL-UNMET-01</td><td>Demand, capacity, and unmet reconciliation</td><td>PASS</td><td>0</td></tr>
+<tr><td>VAL-DECISION-01</td><td>Decision references and rationale</td><td>PASS</td><td>0</td></tr></tbody></table>
+
+<h2>Detected violations</h2>
+<table><thead><tr><th>Check</th><th>Severity</th><th>Collection</th><th>Entity</th><th>Expected</th><th>Message</th></tr></thead><tbody><tr><td>VAL-DUP-01</td><td>High</td><td>sections</td><td>SEC-2026-000089</td><td>Yes</td><td>Duplicate section business key (CRS-000024, 2026-Fall, 1).</td></tr>
+<tr><td>VAL-CAP-01</td><td>High</td><td>sections</td><td>SEC-2026-000088</td><td>Yes</td><td>Section capacity 7 is below minimum 8.</td></tr>
+<tr><td>VAL-SKILL-01</td><td>High</td><td>workloadAssignments</td><td>WLA-2026-000088</td><td>Yes</td><td>Faculty FAC-000009 has no valid skill for CRS-000052.</td></tr>
+<tr><td>VAL-WORKLOAD-01</td><td>High</td><td>workloadAssignments</td><td>WLA-2026-000089</td><td>Yes</td><td>Faculty FAC-000027 total workload 10 exceeds max 9.</td></tr>
+<tr><td>VAL-PREREQ-01</td><td>High</td><td>studentPlans</td><td>STP-002001</td><td>Yes</td><td>Student STU-000014 planned CRS-000045 in 2025-Fall before prerequisite CRS-000043.</td></tr></tbody></table>
+
+<h2>Injected anomaly coverage</h2>
+<table><thead><tr><th>Anomaly</th><th>Issue type</th><th>Entity type</th><th>Entity</th><th>Expected rule</th><th>Coverage</th></tr></thead><tbody><tr><td>ANM-000001</td><td>FACULTY_OUTSIDE_SKILL</td><td>WorkloadAssignment</td><td>WLA-2026-000088</td><td>VAL-SKILL-01</td><td>Detected</td></tr>
+<tr><td>ANM-000002</td><td>WORKLOAD_EXCEEDED</td><td>WorkloadAssignment</td><td>WLA-2026-000089</td><td>VAL-WORKLOAD-01</td><td>Detected</td></tr>
+<tr><td>ANM-000003</td><td>SECTION_CAPACITY_TOO_LOW</td><td>Section</td><td>SEC-2026-000088</td><td>VAL-CAP-01</td><td>Detected</td></tr>
+<tr><td>ANM-000004</td><td>COURSE_SCHEDULED_BEFORE_PREREQUISITE</td><td>StudentPlan</td><td>STP-002001</td><td>VAL-PREREQ-01</td><td>Detected</td></tr>
+<tr><td>ANM-000005</td><td>DUPLICATE_SECTION_ASSIGNMENT</td><td>Section</td><td>SEC-2026-000089</td><td>VAL-DUP-01</td><td>Detected</td></tr></tbody></table>
+
+<h2>Reproducibility</h2>
+<p>No reproducibility report found. Run <code>npm run reproduce</code> to generate one.</p>
+
+<h2>Collection row counts</h2>
+<table><thead><tr><th>Collection</th><th>Rows</th></tr></thead><tbody><tr><td>terms</td><td>5</td></tr>
+<tr><td>programs</td><td>10</td></tr>
+<tr><td>courses</td><td>100</td></tr>
+<tr><td>prerequisites</td><td>68</td></tr>
+<tr><td>students</td><td>500</td></tr>
+<tr><td>studentPlans</td><td>2001</td></tr>
+<tr><td>registrationInterests</td><td>8978</td></tr>
+<tr><td>faculty</td><td>50</td></tr>
+<tr><td>facultySkills</td><td>168</td></tr>
+<tr><td>availabilities</td><td>304</td></tr>
+<tr><td>rooms</td><td>20</td></tr>
+<tr><td>sections</td><td>89</td></tr>
+<tr><td>workloadAssignments</td><td>91</td></tr>
+<tr><td>demandForecasts</td><td>90</td></tr>
+<tr><td>unmetDemands</td><td>19</td></tr>
+<tr><td>allocationDecisions</td><td>108</td></tr>
+<tr><td>lifecycleEvents</td><td>22640</td></tr>
+<tr><td>groundTruthAnomalies</td><td>5</td></tr>
+<tr><td>validationRuns</td><td>1</td></tr>
+<tr><td>pipelineRuns</td><td>0</td></tr></tbody></table>
+
+</main>
+</body>
+</html>

@@ -4,7 +4,7 @@ A TypeScript MERN application for forecasting course demand and allocating facul
 
 ## Status
 
-Phase 1: monorepo scaffold, shared schema/types, deterministic RNG/ID helpers, Docker configuration, and build scripts.
+Phases 1-6 complete: monorepo scaffold, deterministic data generation, forecasting, constraint-aware allocation, anomaly injection, and validation. Exports and the read-only dashboard are next.
 
 The implementation is being committed phase by phase.
 
@@ -42,13 +42,17 @@ $env:MONGO_IMAGE = "mongo:7"
 docker compose up -d mongo
 ```
 
-Run the data pipeline and allocation phases:
+Run the data pipeline, allocation, anomaly injection, and validation phases:
 
 ```powershell
 npm run pipeline -- --scale starter
 npm run forecast
 npm run allocate
+npm run inject -- --scale starter
+npm run validate -- --scale starter
 ```
+
+Validation writes `reports/validation_summary.json` and `reports/validation_violations.csv`.
 
 The API and dashboard commands are added in later phases.
 

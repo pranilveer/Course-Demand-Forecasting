@@ -1,26 +1,27 @@
-import { SEED, TARGET_TERM } from '@yottaflex/shared';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Layout } from './components/Layout';
+import { AllocationPage } from './pages/AllocationPage';
+import { ExceptionsPage } from './pages/ExceptionsPage';
+import { ExplorerPage } from './pages/ExplorerPage';
+import { ForecastPage } from './pages/ForecastPage';
+import { OverviewPage } from './pages/OverviewPage';
+import { ReproducibilityPage } from './pages/ReproducibilityPage';
+import { SchemaPage } from './pages/SchemaPage';
 
 export function App() {
   return (
-    <main className="app-shell">
-      <section className="hero-card">
-        <p className="eyebrow">YottaFlex AI</p>
-        <h1>Course Demand &amp; Faculty Allocation</h1>
-        <p>
-          The analytics dashboard scaffold is ready. The pipeline, API, and dashboards are being
-          built phase by phase.
-        </p>
-        <dl className="fact-grid">
-          <div>
-            <dt>Seed</dt>
-            <dd>{SEED}</dd>
-          </div>
-          <div>
-            <dt>Target term</dt>
-            <dd>{TARGET_TERM}</dd>
-          </div>
-        </dl>
-      </section>
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<OverviewPage />} />
+          <Route path="forecasts" element={<ForecastPage />} />
+          <Route path="allocation" element={<AllocationPage />} />
+          <Route path="exceptions" element={<ExceptionsPage />} />
+          <Route path="explorer" element={<ExplorerPage />} />
+          <Route path="reproducibility" element={<ReproducibilityPage />} />
+          <Route path="schema" element={<SchemaPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }

@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "2023-Fall",
+    "academic_year": 2023,
+    "term_name": "Fall",
+    "start_date": "2023-08-21",
+    "end_date": "2023-12-15",
+    "is_target": false,
+    "status": "Closed",
+    "created_at": "2026-08-01T00:00:00.000Z"
+  },
+  {
+    "_id": "2024-Fall",
+    "academic_year": 2024,
+    "term_name": "Fall",
+    "start_date": "2024-08-19",
+    "end_date": "2024-12-13",
+    "is_target": false,
+    "status": "Closed",
+    "created_at": "2026-08-01T00:00:00.000Z"
+  },
+  {
+    "_id": "2025-Fall",
+    "academic_year": 2025,
+    "term_name": "Fall",
+    "start_date": "2025-08-18",
+    "end_date": "2025-12-12",
+    "is_target": false,
+    "status": "Closed",
+    "created_at": "2026-08-01T00:00:00.000Z"
+  },
+  {
+    "_id": "2026-Fall",
+    "academic_year": 2026,
+    "term_name": "Fall",
+    "start_date": "2026-08-17",
+    "end_date": "2026-12-11",
+    "is_target": true,
+    "status": "Planned",
+    "created_at": "2026-08-01T00:00:00.000Z"
+  },
+  {
+    "_id": "2026-Spring",
+    "academic_year": 2026,
+    "term_name": "Spring",
+    "start_date": "2026-01-12",
+    "end_date": "2026-05-08",
+    "is_target": false,
+    "status": "Closed",
+    "created_at": "2026-08-01T00:00:00.000Z"
+  }
+]

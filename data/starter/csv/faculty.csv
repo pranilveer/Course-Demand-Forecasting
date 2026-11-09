@@ -1,0 +1,51 @@
+_id,display_name,email,department,employment_type,max_workload_units,min_workload_units,hire_date,status,created_at
+FAC-000001,Faculty 000001,faculty000001@example.edu,Computer Science,PartTime,7,4,2019-08-25,Active,2026-08-01T00:00:00.000Z
+FAC-000002,Faculty 000002,faculty000002@example.edu,Electrical Engineering,FullTime,14,9,2025-02-27,Active,2026-08-01T00:00:00.000Z
+FAC-000003,Faculty 000003,faculty000003@example.edu,Mechanical Engineering,FullTime,12,8,2021-05-27,Active,2026-08-01T00:00:00.000Z
+FAC-000004,Faculty 000004,faculty000004@example.edu,Business,FullTime,13,9,2014-04-25,Active,2026-08-01T00:00:00.000Z
+FAC-000005,Faculty 000005,faculty000005@example.edu,Mathematics,FullTime,15,6,2016-01-12,Active,2026-08-01T00:00:00.000Z
+FAC-000006,Faculty 000006,faculty000006@example.edu,Physics,PartTime,6,5,2018-08-13,Active,2026-08-01T00:00:00.000Z
+FAC-000007,Faculty 000007,faculty000007@example.edu,Biology,FullTime,15,6,2012-07-21,Active,2026-08-01T00:00:00.000Z
+FAC-000008,Faculty 000008,faculty000008@example.edu,Psychology,FullTime,15,6,2018-06-06,Active,2026-08-01T00:00:00.000Z
+FAC-000009,Faculty 000009,faculty000009@example.edu,Design,FullTime,12,7,2019-07-15,Active,2026-08-01T00:00:00.000Z
+FAC-000010,Faculty 000010,faculty000010@example.edu,Economics,PartTime,8,3,2013-03-11,Active,2026-08-01T00:00:00.000Z
+FAC-000011,Faculty 000011,faculty000011@example.edu,Computer Science,Adjunct,6,2,2025-11-08,Active,2026-08-01T00:00:00.000Z
+FAC-000012,Faculty 000012,faculty000012@example.edu,Electrical Engineering,PartTime,7,3,2017-08-02,Active,2026-08-01T00:00:00.000Z
+FAC-000013,Faculty 000013,faculty000013@example.edu,Mechanical Engineering,FullTime,13,9,2019-03-07,Active,2026-08-01T00:00:00.000Z
+FAC-000014,Faculty 000014,faculty000014@example.edu,Business,Adjunct,4,2,2008-03-14,Active,2026-08-01T00:00:00.000Z
+FAC-000015,Faculty 000015,faculty000015@example.edu,Mathematics,FullTime,14,9,2011-01-01,Active,2026-08-01T00:00:00.000Z
+FAC-000016,Faculty 000016,faculty000016@example.edu,Physics,PartTime,7,4,2024-07-23,Active,2026-08-01T00:00:00.000Z
+FAC-000017,Faculty 000017,faculty000017@example.edu,Biology,FullTime,13,8,2009-10-09,Active,2026-08-01T00:00:00.000Z
+FAC-000018,Faculty 000018,faculty000018@example.edu,Psychology,PartTime,8,4,2022-05-30,Active,2026-08-01T00:00:00.000Z
+FAC-000019,Faculty 000019,faculty000019@example.edu,Design,FullTime,15,6,2013-07-21,Inactive,2026-08-01T00:00:00.000Z
+FAC-000020,Faculty 000020,faculty000020@example.edu,Economics,FullTime,12,9,2023-10-27,Active,2026-08-01T00:00:00.000Z
+FAC-000021,Faculty 000021,faculty000021@example.edu,Computer Science,FullTime,13,9,2014-01-28,Active,2026-08-01T00:00:00.000Z
+FAC-000022,Faculty 000022,faculty000022@example.edu,Electrical Engineering,FullTime,14,9,2023-04-24,Active,2026-08-01T00:00:00.000Z
+FAC-000023,Faculty 000023,faculty000023@example.edu,Mechanical Engineering,FullTime,15,9,2021-11-09,Active,2026-08-01T00:00:00.000Z
+FAC-000024,Faculty 000024,faculty000024@example.edu,Business,FullTime,14,6,2008-06-11,Active,2026-08-01T00:00:00.000Z
+FAC-000025,Faculty 000025,faculty000025@example.edu,Mathematics,Adjunct,6,2,2014-03-06,Active,2026-08-01T00:00:00.000Z
+FAC-000026,Faculty 000026,faculty000026@example.edu,Physics,Adjunct,6,0,2024-08-14,Active,2026-08-01T00:00:00.000Z
+FAC-000027,Faculty 000027,faculty000027@example.edu,Biology,PartTime,9,5,2022-03-15,Active,2026-08-01T00:00:00.000Z
+FAC-000028,Faculty 000028,faculty000028@example.edu,Psychology,FullTime,14,6,2025-09-25,Active,2026-08-01T00:00:00.000Z
+FAC-000029,Faculty 000029,faculty000029@example.edu,Design,Adjunct,3,1,2014-09-19,Active,2026-08-01T00:00:00.000Z
+FAC-000030,Faculty 000030,faculty000030@example.edu,Economics,FullTime,12,8,2014-01-04,Inactive,2026-08-01T00:00:00.000Z
+FAC-000031,Faculty 000031,faculty000031@example.edu,Computer Science,FullTime,15,6,2011-12-21,Active,2026-08-01T00:00:00.000Z
+FAC-000032,Faculty 000032,faculty000032@example.edu,Electrical Engineering,PartTime,8,4,2024-02-26,Active,2026-08-01T00:00:00.000Z
+FAC-000033,Faculty 000033,faculty000033@example.edu,Mechanical Engineering,FullTime,14,6,2008-02-09,Active,2026-08-01T00:00:00.000Z
+FAC-000034,Faculty 000034,faculty000034@example.edu,Business,FullTime,15,8,2010-10-18,Active,2026-08-01T00:00:00.000Z
+FAC-000035,Faculty 000035,faculty000035@example.edu,Mathematics,FullTime,13,6,2010-11-16,Active,2026-08-01T00:00:00.000Z
+FAC-000036,Faculty 000036,faculty000036@example.edu,Physics,Adjunct,3,1,2014-09-23,Active,2026-08-01T00:00:00.000Z
+FAC-000037,Faculty 000037,faculty000037@example.edu,Biology,PartTime,8,4,2010-11-01,Active,2026-08-01T00:00:00.000Z
+FAC-000038,Faculty 000038,faculty000038@example.edu,Psychology,PartTime,7,4,2022-10-13,Active,2026-08-01T00:00:00.000Z
+FAC-000039,Faculty 000039,faculty000039@example.edu,Design,PartTime,6,5,2013-12-04,Active,2026-08-01T00:00:00.000Z
+FAC-000040,Faculty 000040,faculty000040@example.edu,Economics,FullTime,12,6,2010-04-10,Active,2026-08-01T00:00:00.000Z
+FAC-000041,Faculty 000041,faculty000041@example.edu,Computer Science,FullTime,12,6,2023-08-09,Active,2026-08-01T00:00:00.000Z
+FAC-000042,Faculty 000042,faculty000042@example.edu,Electrical Engineering,PartTime,7,3,2019-02-04,Active,2026-08-01T00:00:00.000Z
+FAC-000043,Faculty 000043,faculty000043@example.edu,Mechanical Engineering,FullTime,12,8,2018-08-12,Active,2026-08-01T00:00:00.000Z
+FAC-000044,Faculty 000044,faculty000044@example.edu,Business,FullTime,12,9,2010-02-21,Active,2026-08-01T00:00:00.000Z
+FAC-000045,Faculty 000045,faculty000045@example.edu,Mathematics,FullTime,12,6,2019-10-27,Active,2026-08-01T00:00:00.000Z
+FAC-000046,Faculty 000046,faculty000046@example.edu,Physics,Adjunct,4,1,2009-07-02,Active,2026-08-01T00:00:00.000Z
+FAC-000047,Faculty 000047,faculty000047@example.edu,Biology,FullTime,12,6,2017-06-15,OnLeave,2026-08-01T00:00:00.000Z
+FAC-000048,Faculty 000048,faculty000048@example.edu,Psychology,FullTime,14,9,2010-05-29,Active,2026-08-01T00:00:00.000Z
+FAC-000049,Faculty 000049,faculty000049@example.edu,Design,PartTime,7,3,2023-06-29,Active,2026-08-01T00:00:00.000Z
+FAC-000050,Faculty 000050,faculty000050@example.edu,Economics,PartTime,6,5,2009-12-11,Active,2026-08-01T00:00:00.000Z

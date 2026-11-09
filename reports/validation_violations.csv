@@ -1,0 +1,6 @@
+check_id,severity,collection,entity_id,related_entity_id,message,expected,anomaly_id
+VAL-DUP-01,High,sections,SEC-2026-000089,,"Duplicate section business key (CRS-000024, 2026-Fall, 1).",true,ANM-000005
+VAL-CAP-01,High,sections,SEC-2026-000088,,Section capacity 7 is below minimum 8.,true,ANM-000003
+VAL-SKILL-01,High,workloadAssignments,WLA-2026-000088,SEC-2026-000001,Faculty FAC-000009 has no valid skill for CRS-000052.,true,ANM-000001
+VAL-WORKLOAD-01,High,workloadAssignments,WLA-2026-000089,FAC-000027,Faculty FAC-000027 total workload 10 exceeds max 9.,true,ANM-000002
+VAL-PREREQ-01,High,studentPlans,STP-002001,CRS-000043,Student STU-000014 planned CRS-000045 in 2025-Fall before prerequisite CRS-000043.,true,ANM-000004

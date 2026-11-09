@@ -1,0 +1,644 @@
+{
+  "term": "2026-Fall",
+  "method": "WMA(0.5,0.3,0.2)+Trend(0.1)",
+  "course_count": 90,
+  "mae": 4.29,
+  "rmse": 5.74,
+  "mape": 20.26,
+  "bias": -2.69,
+  "naive_mae": 4.59,
+  "improvement_vs_naive": 6.54,
+  "generated_at": "2026-08-01T00:00:00.000Z",
+  "per_course": [
+    {
+      "course_id": "CRS-000001",
+      "forecast": 17,
+      "actual": 19,
+      "naive": 16,
+      "error": -2
+    },
+    {
+      "course_id": "CRS-000002",
+      "forecast": 21,
+      "actual": 17,
+      "naive": 22,
+      "error": 4
+    },
+    {
+      "course_id": "CRS-000003",
+      "forecast": 84,
+      "actual": 78,
+      "naive": 87,
+      "error": 6
+    },
+    {
+      "course_id": "CRS-000004",
+      "forecast": 19,
+      "actual": 20,
+      "naive": 21,
+      "error": -1
+    },
+    {
+      "course_id": "CRS-000005",
+      "forecast": 44,
+      "actual": 61,
+      "naive": 43,
+      "error": -17
+    },
+    {
+      "course_id": "CRS-000007",
+      "forecast": 18,
+      "actual": 23,
+      "naive": 21,
+      "error": -5
+    },
+    {
+      "course_id": "CRS-000008",
+      "forecast": 16,
+      "actual": 23,
+      "naive": 16,
+      "error": -7
+    },
+    {
+      "course_id": "CRS-000009",
+      "forecast": 19,
+      "actual": 17,
+      "naive": 20,
+      "error": 2
+    },
+    {
+      "course_id": "CRS-000010",
+      "forecast": 42,
+      "actual": 42,
+      "naive": 43,
+      "error": 0
+    },
+    {
+      "course_id": "CRS-000011",
+      "forecast": 42,
+      "actual": 45,
+      "naive": 43,
+      "error": -3
+    },
+    {
+      "course_id": "CRS-000012",
+      "forecast": 18,
+      "actual": 20,
+      "naive": 19,
+      "error": -2
+    },
+    {
+      "course_id": "CRS-000013",
+      "forecast": 19,
+      "actual": 24,
+      "naive": 20,
+      "error": -5
+    },
+    {
+      "course_id": "CRS-000014",
+      "forecast": 16,
+      "actual": 24,
+      "naive": 16,
+      "error": -8
+    },
+    {
+      "course_id": "CRS-000015",
+      "forecast": 21,
+      "actual": 20,
+      "naive": 23,
+      "error": 1
+    },
+    {
+      "course_id": "CRS-000016",
+      "forecast": 44,
+      "actual": 54,
+      "naive": 42,
+      "error": -10
+    },
+    {
+      "course_id": "CRS-000017",
+      "forecast": 20,
+      "actual": 20,
+      "naive": 23,
+      "error": 0
+    },
+    {
+      "course_id": "CRS-000018",
+      "forecast": 6,
+      "actual": 9,
+      "naive": 6,
+      "error": -3
+    },
+    {
+      "course_id": "CRS-000019",
+      "forecast": 6,
+      "actual": 8,
+      "naive": 7,
+      "error": -2
+    },
+    {
+      "course_id": "CRS-000021",
+      "forecast": 19,
+      "actual": 20,
+      "naive": 21,
+      "error": -1
+    },
+    {
+      "course_id": "CRS-000022",
+      "forecast": 17,
+      "actual": 20,
+      "naive": 16,
+      "error": -3
+    },
+    {
+      "course_id": "CRS-000024",
+      "forecast": 47,
+      "actual": 47,
+      "naive": 52,
+      "error": 0
+    },
+    {
+      "course_id": "CRS-000025",
+      "forecast": 21,
+      "actual": 17,
+      "naive": 22,
+      "error": 4
+    },
+    {
+      "course_id": "CRS-000026",
+      "forecast": 22,
+      "actual": 24,
+      "naive": 25,
+      "error": -2
+    },
+    {
+      "course_id": "CRS-000027",
+      "forecast": 5,
+      "actual": 11,
+      "naive": 4,
+      "error": -6
+    },
+    {
+      "course_id": "CRS-000028",
+      "forecast": 17,
+      "actual": 25,
+      "naive": 19,
+      "error": -8
+    },
+    {
+      "course_id": "CRS-000029",
+      "forecast": 19,
+      "actual": 19,
+      "naive": 19,
+      "error": 0
+    },
+    {
+      "course_id": "CRS-000030",
+      "forecast": 19,
+      "actual": 20,
+      "naive": 20,
+      "error": -1
+    },
+    {
+      "course_id": "CRS-000031",
+      "forecast": 15,
+      "actual": 7,
+      "naive": 21,
+      "error": 8
+    },
+    {
+      "course_id": "CRS-000033",
+      "forecast": 20,
+      "actual": 20,
+      "naive": 20,
+      "error": 0
+    },
+    {
+      "course_id": "CRS-000034",
+      "forecast": 16,
+      "actual": 17,
+      "naive": 18,
+      "error": -1
+    },
+    {
+      "course_id": "CRS-000035",
+      "forecast": 20,
+      "actual": 21,
+      "naive": 22,
+      "error": -1
+    },
+    {
+      "course_id": "CRS-000036",
+      "forecast": 20,
+      "actual": 19,
+      "naive": 23,
+      "error": 1
+    },
+    {
+      "course_id": "CRS-000037",
+      "forecast": 21,
+      "actual": 17,
+      "naive": 23,
+      "error": 4
+    },
+    {
+      "course_id": "CRS-000038",
+      "forecast": 15,
+      "actual": 25,
+      "naive": 16,
+      "error": -10
+    },
+    {
+      "course_id": "CRS-000039",
+      "forecast": 52,
+      "actual": 60,
+      "naive": 60,
+      "error": -8
+    },
+    {
+      "course_id": "CRS-000042",
+      "forecast": 19,
+      "actual": 18,
+      "naive": 21,
+      "error": 1
+    },
+    {
+      "course_id": "CRS-000043",
+      "forecast": 17,
+      "actual": 25,
+      "naive": 17,
+      "error": -8
+    },
+    {
+      "course_id": "CRS-000044",
+      "forecast": 5,
+      "actual": 17,
+      "naive": 5,
+      "error": -12
+    },
+    {
+      "course_id": "CRS-000045",
+      "forecast": 6,
+      "actual": 18,
+      "naive": 7,
+      "error": -12
+    },
+    {
+      "course_id": "CRS-000046",
+      "forecast": 22,
+      "actual": 18,
+      "naive": 24,
+      "error": 4
+    },
+    {
+      "course_id": "CRS-000047",
+      "forecast": 18,
+      "actual": 22,
+      "naive": 20,
+      "error": -4
+    },
+    {
+      "course_id": "CRS-000048",
+      "forecast": 4,
+      "actual": 8,
+      "naive": 4,
+      "error": -4
+    },
+    {
+      "course_id": "CRS-000049",
+      "forecast": 20,
+      "actual": 19,
+      "naive": 21,
+      "error": 1
+    },
+    {
+      "course_id": "CRS-000050",
+      "forecast": 21,
+      "actual": 16,
+      "naive": 22,
+      "error": 5
+    },
+    {
+      "course_id": "CRS-000052",
+      "forecast": 90,
+      "actual": 100,
+      "naive": 95,
+      "error": -10
+    },
+    {
+      "course_id": "CRS-000053",
+      "forecast": 13,
+      "actual": 0,
+      "naive": 22,
+      "error": 13
+    },
+    {
+      "course_id": "CRS-000054",
+      "forecast": 17,
+      "actual": 24,
+      "naive": 18,
+      "error": -7
+    },
+    {
+      "course_id": "CRS-000055",
+      "forecast": 45,
+      "actual": 51,
+      "naive": 43,
+      "error": -6
+    },
+    {
+      "course_id": "CRS-000056",
+      "forecast": 49,
+      "actual": 60,
+      "naive": 53,
+      "error": -11
+    },
+    {
+      "course_id": "CRS-000057",
+      "forecast": 20,
+      "actual": 17,
+      "naive": 23,
+      "error": 3
+    },
+    {
+      "course_id": "CRS-000058",
+      "forecast": 21,
+      "actual": 17,
+      "naive": 24,
+      "error": 4
+    },
+    {
+      "course_id": "CRS-000059",
+      "forecast": 6,
+      "actual": 7,
+      "naive": 6,
+      "error": -1
+    },
+    {
+      "course_id": "CRS-000060",
+      "forecast": 16,
+      "actual": 20,
+      "naive": 17,
+      "error": -4
+    },
+    {
+      "course_id": "CRS-000061",
+      "forecast": 49,
+      "actual": 45,
+      "naive": 53,
+      "error": 4
+    },
+    {
+      "course_id": "CRS-000062",
+      "forecast": 4,
+      "actual": 6,
+      "naive": 4,
+      "error": -2
+    },
+    {
+      "course_id": "CRS-000063",
+      "forecast": 16,
+      "actual": 25,
+      "naive": 17,
+      "error": -9
+    },
+    {
+      "course_id": "CRS-000064",
+      "forecast": 6,
+      "actual": 8,
+      "naive": 7,
+      "error": -2
+    },
+    {
+      "course_id": "CRS-000065",
+      "forecast": 19,
+      "actual": 24,
+      "naive": 19,
+      "error": -5
+    },
+    {
+      "course_id": "CRS-000066",
+      "forecast": 5,
+      "actual": 6,
+      "naive": 6,
+      "error": -1
+    },
+    {
+      "course_id": "CRS-000067",
+      "forecast": 6,
+      "actual": 6,
+      "naive": 6,
+      "error": 0
+    },
+    {
+      "course_id": "CRS-000068",
+      "forecast": 18,
+      "actual": 19,
+      "naive": 19,
+      "error": -1
+    },
+    {
+      "course_id": "CRS-000069",
+      "forecast": 17,
+      "actual": 24,
+      "naive": 17,
+      "error": -7
+    },
+    {
+      "course_id": "CRS-000070",
+      "forecast": 16,
+      "actual": 20,
+      "naive": 15,
+      "error": -4
+    },
+    {
+      "course_id": "CRS-000071",
+      "forecast": 18,
+      "actual": 17,
+      "naive": 19,
+      "error": 1
+    },
+    {
+      "course_id": "CRS-000072",
+      "forecast": 46,
+      "actual": 44,
+      "naive": 50,
+      "error": 2
+    },
+    {
+      "course_id": "CRS-000074",
+      "forecast": 19,
+      "actual": 19,
+      "naive": 20,
+      "error": 0
+    },
+    {
+      "course_id": "CRS-000075",
+      "forecast": 19,
+      "actual": 19,
+      "naive": 20,
+      "error": 0
+    },
+    {
+      "course_id": "CRS-000076",
+      "forecast": 3,
+      "actual": 0,
+      "naive": 5,
+      "error": 3
+    },
+    {
+      "course_id": "CRS-000077",
+      "forecast": 17,
+      "actual": 21,
+      "naive": 18,
+      "error": -4
+    },
+    {
+      "course_id": "CRS-000078",
+      "forecast": 47,
+      "actual": 52,
+      "naive": 46,
+      "error": -5
+    },
+    {
+      "course_id": "CRS-000079",
+      "forecast": 6,
+      "actual": 9,
+      "naive": 6,
+      "error": -3
+    },
+    {
+      "course_id": "CRS-000080",
+      "forecast": 19,
+      "actual": 22,
+      "naive": 21,
+      "error": -3
+    },
+    {
+      "course_id": "CRS-000081",
+      "forecast": 18,
+      "actual": 21,
+      "naive": 18,
+      "error": -3
+    },
+    {
+      "course_id": "CRS-000082",
+      "forecast": 19,
+      "actual": 21,
+      "naive": 20,
+      "error": -2
+    },
+    {
+      "course_id": "CRS-000084",
+      "forecast": 6,
+      "actual": 22,
+      "naive": 7,
+      "error": -16
+    },
+    {
+      "course_id": "CRS-000085",
+      "forecast": 17,
+      "actual": 24,
+      "naive": 15,
+      "error": -7
+    },
+    {
+      "course_id": "CRS-000086",
+      "forecast": 20,
+      "actual": 24,
+      "naive": 20,
+      "error": -4
+    },
+    {
+      "course_id": "CRS-000087",
+      "forecast": 16,
+      "actual": 18,
+      "naive": 17,
+      "error": -2
+    },
+    {
+      "course_id": "CRS-000089",
+      "forecast": 5,
+      "actual": 6,
+      "naive": 6,
+      "error": -1
+    },
+    {
+      "course_id": "CRS-000090",
+      "forecast": 5,
+      "actual": 5,
+      "naive": 5,
+      "error": 0
+    },
+    {
+      "course_id": "CRS-000091",
+      "forecast": 19,
+      "actual": 22,
+      "naive": 20,
+      "error": -3
+    },
+    {
+      "course_id": "CRS-000092",
+      "forecast": 92,
+      "actual": 96,
+      "naive": 106,
+      "error": -4
+    },
+    {
+      "course_id": "CRS-000093",
+      "forecast": 47,
+      "actual": 63,
+      "naive": 51,
+      "error": -16
+    },
+    {
+      "course_id": "CRS-000094",
+      "forecast": 20,
+      "actual": 22,
+      "naive": 22,
+      "error": -2
+    },
+    {
+      "course_id": "CRS-000095",
+      "forecast": 6,
+      "actual": 10,
+      "naive": 6,
+      "error": -4
+    },
+    {
+      "course_id": "CRS-000096",
+      "forecast": 21,
+      "actual": 20,
+      "naive": 23,
+      "error": 1
+    },
+    {
+      "course_id": "CRS-000097",
+      "forecast": 1,
+      "actual": 6,
+      "naive": 2,
+      "error": -5
+    },
+    {
+      "course_id": "CRS-000098",
+      "forecast": 17,
+      "actual": 22,
+      "naive": 16,
+      "error": -5
+    },
+    {
+      "course_id": "CRS-000099",
+      "forecast": 18,
+      "actual": 22,
+      "naive": 19,
+      "error": -4
+    },
+    {
+      "course_id": "CRS-000100",
+      "forecast": 18,
+      "actual": 23,
+      "naive": 20,
+      "error": -5
+    }
+  ]
+}

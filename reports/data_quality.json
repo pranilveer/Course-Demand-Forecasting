@@ -1,0 +1,228 @@
+{
+  "scale": "starter",
+  "seed": 20261022,
+  "as_of": "2026-08-01T00:00:00.000Z",
+  "validation": {
+    "status": "PASS",
+    "total_checks": 16,
+    "checks": [
+      {
+        "check_id": "VAL-PK-01",
+        "name": "Primary-key uniqueness",
+        "status": "PASS",
+        "violations": 0,
+        "expected": 0,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-FK-01",
+        "name": "Foreign-key integrity",
+        "status": "PASS",
+        "violations": 0,
+        "expected": 0,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-ENUM-01",
+        "name": "Allowed enums",
+        "status": "PASS",
+        "violations": 0,
+        "expected": 0,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-DATE-01",
+        "name": "Date ordering and effective windows",
+        "status": "PASS",
+        "violations": 0,
+        "expected": 0,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-ARITH-01",
+        "name": "Arithmetic reconciliation",
+        "status": "PASS",
+        "violations": 0,
+        "expected": 0,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-LIFE-01",
+        "name": "Lifecycle transitions and final state",
+        "status": "PASS",
+        "violations": 0,
+        "expected": 0,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-DUP-01",
+        "name": "Business-key duplicates",
+        "status": "PASS",
+        "violations": 1,
+        "expected": 1,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-CAP-01",
+        "name": "Section capacity and minimum size",
+        "status": "PASS",
+        "violations": 1,
+        "expected": 1,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-SKILL-01",
+        "name": "Faculty skill eligibility",
+        "status": "PASS",
+        "violations": 1,
+        "expected": 1,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-WORKLOAD-01",
+        "name": "Faculty workload limits",
+        "status": "PASS",
+        "violations": 1,
+        "expected": 1,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-AVAIL-01",
+        "name": "Faculty availability and leave",
+        "status": "PASS",
+        "violations": 0,
+        "expected": 0,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-PREREQ-01",
+        "name": "Prerequisite ordering",
+        "status": "PASS",
+        "violations": 1,
+        "expected": 1,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-ROOM-01",
+        "name": "Room compatibility and schedule conflicts",
+        "status": "PASS",
+        "violations": 0,
+        "expected": 0,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-FORECAST-01",
+        "name": "Forecast formula and historical provenance",
+        "status": "PASS",
+        "violations": 0,
+        "expected": 0,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-UNMET-01",
+        "name": "Demand, capacity, and unmet reconciliation",
+        "status": "PASS",
+        "violations": 0,
+        "expected": 0,
+        "unexpected": 0
+      },
+      {
+        "check_id": "VAL-DECISION-01",
+        "name": "Decision references and rationale",
+        "status": "PASS",
+        "violations": 0,
+        "expected": 0,
+        "unexpected": 0
+      }
+    ],
+    "total_violations": 5,
+    "expected_violations": 5,
+    "unexpected_violations": 0,
+    "anomalies_expected": 5,
+    "anomalies_detected": 5,
+    "anomalies_missed": 0,
+    "detection_rate": 100
+  },
+  "counts": [
+    [
+      "terms",
+      5
+    ],
+    [
+      "programs",
+      10
+    ],
+    [
+      "courses",
+      100
+    ],
+    [
+      "prerequisites",
+      68
+    ],
+    [
+      "students",
+      500
+    ],
+    [
+      "studentPlans",
+      2001
+    ],
+    [
+      "registrationInterests",
+      8978
+    ],
+    [
+      "faculty",
+      50
+    ],
+    [
+      "facultySkills",
+      168
+    ],
+    [
+      "availabilities",
+      304
+    ],
+    [
+      "rooms",
+      20
+    ],
+    [
+      "sections",
+      89
+    ],
+    [
+      "workloadAssignments",
+      91
+    ],
+    [
+      "demandForecasts",
+      90
+    ],
+    [
+      "unmetDemands",
+      19
+    ],
+    [
+      "allocationDecisions",
+      108
+    ],
+    [
+      "lifecycleEvents",
+      22640
+    ],
+    [
+      "groundTruthAnomalies",
+      5
+    ],
+    [
+      "validationRuns",
+      1
+    ],
+    [
+      "pipelineRuns",
+      0
+    ]
+  ]
+}
